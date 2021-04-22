@@ -113,6 +113,8 @@ header {
 
 .notifications-text a {
     font-size: 12px;
+
+    color: grey;
 }
 
 /* Filter Search */
@@ -190,6 +192,34 @@ header {
     overflow: auto;
 }
 
+
+.chat-user-message {
+    background-color: #d5f9ba;
+
+    margin-left: 50%;
+}
+
+.chat-bot-message {
+    background-color: white;
+}
+
+.chat-bot-message,
+.chat-user-message {
+    border-radius: 10px;
+
+    width: 40%;
+    min-height: 40px;
+
+    padding: 10px;
+}
+
+
+/* Chat USER , chat BOT*/
+.chat-user,
+.chat-bot {
+    padding: 30px;
+}
+
 /* Chat FOOTER */
 .chat-footer {
     justify-content: space-between;
@@ -205,7 +235,7 @@ header {
 }
 
 /* Message input */
-.message {
+.message-input {
     width: 90%;
     height: 30px;
 
