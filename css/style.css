@@ -217,7 +217,7 @@ header {
 /* Chat USER , chat BOT*/
 .chat-user,
 .chat-bot {
-    padding: 30px;
+    padding: 10px 30px;
 }
 
 /* Chat FOOTER */
