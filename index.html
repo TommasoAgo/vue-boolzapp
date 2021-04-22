@@ -74,12 +74,12 @@
                 <div class="contacts">
 
                     <!-- Contact Sample -->
-                    <div v-for="contact in contacts.length" class="single-contact flex-row">
+                    <div v-for="contact in contacts" class="single-contact flex-row">
                         <div class="avatar-container">
-                            <img src="img/avatar_1.jpg" alt="avatar">
+                            <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="avatar">
                         </div>
                         <div class="avatar-name">
-                            <span class="contact-name">Mario</span>
+                            <span class="contact-name">{{contact.name}}</span>
                         </div>
                     </div>
                 </div>
