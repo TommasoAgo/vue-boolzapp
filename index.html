@@ -74,7 +74,7 @@
                 <div class="contacts">
 
                     <!-- Contact Sample -->
-                    <div @click="activeChat" v-for="contact in contacts" class="single-contact flex-row">
+                    <div v-for="(contact, index) in contacts" class="single-contact flex-row" @click="activeChat(index)">
                         <div class="avatar-container">
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="avatar">
                         </div>
@@ -116,17 +116,10 @@
                 <!-- Chat MAIN -->
                 <div class="chat-main">
                      
-                    <!-- Bot message TEST -->
-                    <div v-if="contacts.visible == true" v-for="message in contacts.messages" class="chat-bot">
-                        <div class="chat-bot-message">
+                    <!-- message TEST -->
+                    <div v-for="(message, index) in contacts[contactIndex].messages">
+                        <div class="">
                             {{message.text}}
-                        </div>
-                    </div>
-
-                    <!-- User message TEST -->
-                    <div class="chat-user">
-                        <div class="chat-user-message">
-                            
                         </div>
                     </div>
                 </div>
