@@ -156,6 +156,19 @@ header {
     height: calc( 100% - 158px );
 }
 
+.single-contact {
+    padding: 10px;
+    border-bottom: 0.5px solid lightgray;
+
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.single-contact:hover{
+    background-color: #b1b1b1;
+}
+
 /* CHAT SECTION */
 .chat-section {
     width: 65%;
