@@ -118,8 +118,11 @@
                      
                     <!-- message TEST -->
                     <div v-for="(message, index) in contacts[contactIndex].messages">
-                        <div :class="message.status">
+                        <div :class="message.status" class="message-container">
                             {{message.text}}
+                            <div class="date">
+                                {{message.date}}
+                            </div>
                         </div>
                     </div>
                 </div>

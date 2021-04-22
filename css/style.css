@@ -197,11 +197,13 @@ header {
 .sent {
     background-color: #d5f9ba;
 
-    margin-left: 50%;
+    margin-left: 55%;
 }
 
 .received {
     background-color: white;
+
+    margin-left: 5%;
 }
 
 .sent,
@@ -243,4 +245,17 @@ header {
     height: 30px;
 
     border-radius: 5px;
+}
+
+/* Date */
+.message-container {
+    position: relative;
+}
+
+.date {
+    position: absolute;
+    right: 8px;
+    bottom: 3px;
+
+    font-size: 10px;
 }
