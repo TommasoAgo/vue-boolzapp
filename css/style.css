@@ -26,6 +26,10 @@ body {
     flex-direction: column;
 }
 
+.bg-lightgrey {
+    background-color: #eaeaea;
+}
+
 .utente-text {
     font-size: 14px;
 }
@@ -63,9 +67,6 @@ header {
 
     width: 90%;
     height: 90%;
-
-    /* TEST */
-    background-color: lightcoral;
 }
 
 /* NOME UTENTE SECTION */
@@ -79,8 +80,6 @@ header {
     justify-content: space-between;
 
     padding: 10px;
-
-    background-color: #eaeaea;
 }
 
 .avatar-name {
@@ -120,8 +119,6 @@ header {
 .filter-search {
     text-align: center;
     padding: 5px 0;
-
-    background-color: #eaeaea;
 }
 
 .input-filter {
@@ -153,6 +150,8 @@ header {
 .contacts {
     background-color: white;
 
+    overflow: auto;
+
     height: calc( 100% - 158px );
 }
 
@@ -172,4 +171,43 @@ header {
 /* CHAT SECTION */
 .chat-section {
     width: 65%;
+}
+
+/* Chat HEADER */
+.chat-header {
+    padding: 10px;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Chat MAIN */
+.chat-main {
+    height: calc( 100% - 134px );
+
+    background-image: url(../img/mine.jpg);
+
+    overflow: auto;
+}
+
+/* Chat FOOTER */
+.chat-footer {
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #f3eeea;
+
+    padding: 20px;
+}
+
+.chat-footer i {
+    color: #6a7376;
+}
+
+/* Message input */
+.message {
+    width: 90%;
+    height: 30px;
+
+    border-radius: 5px;
 }
