@@ -96,12 +96,13 @@
     
                             <!-- Avatar Sample -->
                             <div class="avatar-container">
-                                <img src="img/avatar_io.jpg" alt="Avatar">
+                                <img :src=" 'img/avatar' + contacts[contactIndex].avatar + '.jpg' " alt="Avatar">
                             </div>
     
                             <!-- Avatar Name -->
                             <div class="avatar-name">
-                                <span class="utente-text">Nome Utente</span>
+                                <span class="utente-text">{{contacts[contactIndex].name}}</span><br>
+                                <span class="ultimo-accesso grey-text">Ultimo accesso alle: {{contacts[contactIndex].messages[contacts[contactIndex].messages.length - 1].date}}</span>
                             </div>
                         </div>
                         

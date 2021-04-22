@@ -250,6 +250,8 @@ header {
 /* Date */
 .message-container {
     position: relative;
+
+    padding: 20px;
 }
 
 .date {
@@ -257,5 +259,12 @@ header {
     right: 8px;
     bottom: 3px;
 
+    font-size: 10px;
+
+    color: lightgray;
+}
+
+/* Ultimo accesso */
+.ultimo-accesso {
     font-size: 10px;
 }
