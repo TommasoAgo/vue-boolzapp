@@ -65,7 +65,7 @@
                 <!-- Filter Search -->
                 <div class="filter-search bg-lightgrey">
                     <div class="filter">
-                        <input class="input-filter" type="text" name="input-filter" id="input-filter" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="contactFilter" @keyup="filterUser" class="input-filter" type="text" name="input-filter" id="input-filter" placeholder="Cerca o inizia una nuova chat">
                         <i class="fas fa-search lens"></i>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                 <div class="contacts">
 
                     <!-- Contact Sample -->
-                    <div v-for="(contact, index) in contacts" class="single-contact flex-row" @click="activeChat(index)">
+                    <div v-for="(contact, index) in contacts" class="single-contact flex-row" @click="activeChat(index)" v-if="contact.visible">
                         <div class="avatar-container">
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="avatar">
                         </div>
@@ -102,7 +102,7 @@
                             <!-- Avatar Name -->
                             <div class="avatar-name">
                                 <span class="utente-text">{{contacts[contactIndex].name}}</span><br>
-                                <span class="ultimo-accesso grey-text">Ultimo accesso alle: {{contacts[contactIndex].messages[contacts[contactIndex].messages.length - 1].date}}</span>
+                                <span class="ultimo-accesso grey-text">Ultimo accesso oggi al alle: {{contacts[contactIndex].messages[contacts[contactIndex].messages.length - 1].date}}</span>
                             </div>
                         </div>
                         

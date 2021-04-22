@@ -3,6 +3,7 @@ var app = new Vue(
         el: '#root',
         data : {
             contactIndex: 0,
+            contactFilter: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -90,8 +91,21 @@ var app = new Vue(
             ]
         },
         methods : {
+
+            // Funzione che al click dell'utente, mostra la chat corrente
             activeChat(index) {
                 this.contactIndex = index;
+            },
+
+            // Funzione per filtrare gli utenti
+            filterUser() {
+                this.contacts.forEach(element => {
+                    if(element.name.toLowerCase().includes(this.contactFilter.toLowerCase())) {
+                        element.visible = true;
+                    } else {
+                        element.visible = false;
+                    }
+                });
             }
         }
     }
