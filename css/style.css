@@ -194,24 +194,26 @@ header {
 }
 
 
-.chat-user-message {
+.sent {
     background-color: #d5f9ba;
 
     margin-left: 50%;
 }
 
-.chat-bot-message {
+.received {
     background-color: white;
 }
 
-.chat-bot-message,
-.chat-user-message {
+.sent,
+.received {
     border-radius: 10px;
 
     width: 40%;
     min-height: 40px;
 
     padding: 10px;
+    
+    margin-top: 10px;
 }
 
 
