@@ -121,6 +121,19 @@ var app = new Vue(
                     this.contacts[index].messages.push(userMessageItem);
                     this.userMessage = '';
                 }
+
+                this.pushBotMessage(index);
+            },
+            pushBotMessage(index) {
+                setTimeout( () => {
+                    const botMessage = {
+                        date : dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                        text : 'Hola',
+                        status : 'received'
+                    }
+
+                    this.contacts[index].messages.push(botMessage);
+                }, 1000 ); 
             }
         }
     }
