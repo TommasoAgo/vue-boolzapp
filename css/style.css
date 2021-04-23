@@ -168,7 +168,7 @@ header {
 }
 
 .single-contact:hover{
-    background-color: #b1b1b1;
+    background-color: lightgrey;
 }
 
 /* CHAT SECTION */
@@ -267,4 +267,9 @@ header {
 /* Ultimo accesso */
 .ultimo-accesso {
     font-size: 10px;
+}
+
+/* ACTIVE */
+.active {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

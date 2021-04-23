@@ -65,7 +65,12 @@
                 <!-- Filter Search -->
                 <div class="filter-search bg-lightgrey">
                     <div class="filter">
-                        <input v-model="contactFilter" @keyup="filterUser" class="input-filter" type="text" name="input-filter" id="input-filter" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="contactFilter"
+                        @keyup="filterUser" class="input-filter" 
+                        type="text" 
+                        name="input-filter" 
+                        id="input-filter" 
+                        placeholder="Cerca o inizia una nuova chat">
                         <i class="fas fa-search lens"></i>
                     </div>
                 </div>
@@ -74,7 +79,11 @@
                 <div class="contacts">
 
                     <!-- Contact Sample -->
-                    <div v-for="(contact, index) in contacts" class="single-contact flex-row" @click="activeChat(index)" v-if="contact.visible">
+                    <div v-for="(contact, index) in contacts" 
+                        class="single-contact flex-row" 
+                        @click="activeChat(index)" 
+                        v-if="contact.visible"
+                        :class="{ 'active' : index == contactIndex }">
                         <div class="avatar-container">
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="avatar">
                         </div>
@@ -96,7 +105,8 @@
     
                             <!-- Avatar Sample -->
                             <div class="avatar-container">
-                                <img :src=" 'img/avatar' + contacts[contactIndex].avatar + '.jpg' " alt="Avatar">
+                                <img :src=" 'img/avatar' + contacts[contactIndex].avatar + '.jpg' " 
+                                alt="Avatar">
                             </div>
     
                             <!-- Avatar Name -->
