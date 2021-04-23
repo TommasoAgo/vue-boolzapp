@@ -124,6 +124,8 @@ var app = new Vue(
 
                 this.pushBotMessage(index);
             },
+
+            // Funzione che fa apparire un messaggio di risposta all'utente dopo un secondo rispetto all'input
             pushBotMessage(index) {
                 setTimeout( () => {
                     const botMessage = {
