@@ -127,7 +127,7 @@
                 <!-- Chat MAIN -->
                 <div class="chat-main">
                      
-                    <!-- message TEST -->
+                    <!-- Message -->
                     <div v-for="(message, index) in contacts[contactIndex].messages">
                         <div :class="message.status" class="message-container">
                             {{message.text}}
@@ -142,7 +142,13 @@
                 <!-- Chat FOOTER -->
                 <div class="chat-footer flex-row">
                     <i class="far fa-smile pointer"></i>
-                    <input class="message-input" type="text" name="message" id="message-input" placeholder="Scrivi un messaggio">
+                    <input @keyup.enter="pushUserMessage(contactIndex)" 
+                    class="message-input" 
+                    type="text" 
+                    name="message" 
+                    id="message-input"
+                    placeholder="Scrivi un messaggio"
+                    v-model="userMessage">
                     <i class="fas fa-microphone pointer"></i>
                 </div>
             </div>
@@ -152,7 +158,7 @@
     
 
     <!-- JavaScript -->
-    <script src="path/to/dayjs/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

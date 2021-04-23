@@ -4,6 +4,7 @@ var app = new Vue(
         data : {
             contactIndex: 0,
             contactFilter: '',
+            userMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -106,6 +107,20 @@ var app = new Vue(
                         element.visible = false;
                     }
                 });
+            },
+
+            // Funzione che va a pushare un oggetto "messaggio" nell'Array Messages
+            pushUserMessage(index) {
+                const userMessageItem = {
+                    date : dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    text : this.userMessage,
+                    status : 'sent'
+                }
+
+                if( this.userMessage.length != '') {
+                    this.contacts[index].messages.push(userMessageItem);
+                    this.userMessage = '';
+                }
             }
         }
     }
