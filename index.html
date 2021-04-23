@@ -89,6 +89,12 @@
                         </div>
                         <div class="avatar-name">
                             <span class="contact-name">{{contact.name}}</span>
+                            <div class="last-message">
+                                {{contact.messages[contact.messages.length - 1 ].text}}
+                            </div>
+                        </div>
+                        <div class="last-access">
+                            {{contact.messages[contact.messages.length - 1 ].date}}
                         </div>
                     </div>
                 </div>
@@ -133,6 +139,23 @@
                             {{message.text}}
                             <div class="date">
                                 {{message.date}}
+                            </div>
+
+                            <!-- Chat Menu Arrow -->
+                            <div class="chat-menu-arrow">
+                                <i @click="showDropDown(index)" class="fas fa-chevron-down"></i>
+                            </div>
+
+                            <!-- Chat Dropdown -->
+                            <div v-if="message.dropdown" class="chat-dropdown">
+                                <ul>
+                                    <li>
+                                        <a href="#">Informazioni contatto</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Elimina</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

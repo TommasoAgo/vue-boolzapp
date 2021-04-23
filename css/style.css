@@ -9,6 +9,15 @@ img {
     width: 100%;
 }
 
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+}
+
 /* COMMON */
 body {
     background-color: #d9dbd4;
@@ -165,10 +174,31 @@ header {
     align-items: center;
 
     cursor: pointer;
+
+    position: relative;
+}
+
+.last-message {
+    font-size: 10px;
+
+    padding-left: 10px;
+
+    color: lightgrey;
+}
+
+.last-access {
+    font-size: 8px; 
+    
+    color: lightgrey;
+
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
 .single-contact:hover{
     background-color: lightgrey;
+
 }
 
 /* CHAT SECTION */
@@ -273,3 +303,52 @@ header {
 .active {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+/* CHAT MENU */
+.chat-menu-arrow {
+    position: absolute;
+    right: 0px;
+    top: 10%;
+
+    padding: 10px;
+
+    color: lightgrey;
+
+    cursor: pointer;
+
+    display: none;
+}
+
+.message-container:hover .chat-menu-arrow {
+    display: block;
+}
+
+.message-container {
+    position: relative;
+}
+
+/* Dropdown Menu */
+.chat-dropdown {
+    position: absolute;
+    right: 0;
+    top: 35px;
+
+    padding: 10px;
+
+    z-index: 1;
+
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    background-color: white;
+}
+
+.chat-dropdown li {
+    padding: 10px 0;
+
+    font-size: 14px;
+}
+
+.chat-dropdown li a:hover {
+    color: lightgrey;
+}
+
