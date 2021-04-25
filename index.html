@@ -23,7 +23,7 @@
         <div id="root" class="app-container flex-row">
 
             <!-- NOME UTENTE SECTION-->
-            <div class="nome-utente-section">
+            <div class="nome-utente-section" @click="toggleDropDown">
               
                 <!-- Nome Utente HEADER -->
                 <div class="nome-ut-header flex-row bg-lightgrey">
@@ -89,11 +89,11 @@
                         </div>
                         <div class="avatar-name">
                             <span class="contact-name">{{contact.name}}</span>
-                            <div class="last-message">
+                            <div v-if="contacts[contactIndex].messages.length != 0" class="last-message">
                                 {{contact.messages[contact.messages.length - 1 ].text}}
                             </div>
                         </div>
-                        <div class="last-access">
+                        <div v-if="contacts[contactIndex].messages.length != 0" class="last-access">
                             {{contact.messages[contact.messages.length - 1 ].date}}
                         </div>
                     </div>
@@ -104,7 +104,7 @@
             <div class="chat-section">
                 
                 <!-- Chat HEADER -->
-                <div class="chat-header flex-row bg-lightgrey">
+                <div class="chat-header flex-row bg-lightgrey" @click="toggleDropDown">
                    
                     <!-- Avatar and Name -->
                         <div class="avatar-name flex-row">
@@ -118,7 +118,8 @@
                             <!-- Avatar Name -->
                             <div class="avatar-name">
                                 <span class="utente-text">{{contacts[contactIndex].name}}</span><br>
-                                <span class="ultimo-accesso grey-text">Ultimo accesso oggi al alle: {{contacts[contactIndex].messages[contacts[contactIndex].messages.length - 1].date}}</span>
+                                <span v-if="contacts[contactIndex].messages.length != 0" class="ultimo-accesso grey-text">Ultimo accesso oggi al alle: {{contacts[contactIndex].messages[contacts[contactIndex].messages.length - 1].date}}</span>
+                                <span v-else class="ultimo-accesso grey-text">Online</span>
                             </div>
                         </div>
                         
@@ -147,23 +148,25 @@
                             </div>
 
                             <!-- Chat Dropdown -->
+                           <transition name="fade">
                             <div v-if="message.dropdown" class="chat-dropdown">
                                 <ul>
                                     <li>
                                         <a href="#">Informazioni contatto</a>
                                     </li>
                                     <li>
-                                        <a href="#">Elimina</a>
+                                        <a @click="removeMessage(index)" href="#">Elimina</a>
                                     </li>
                                 </ul>
                             </div>
+                           </transition>
                         </div>
                     </div>
                 </div>
 
 
                 <!-- Chat FOOTER -->
-                <div class="chat-footer flex-row">
+                <div class="chat-footer flex-row" @click="toggleDropDown">
                     <i class="far fa-smile pointer"></i>
                     <input @keyup.enter="pushUserMessage(contactIndex)" 
                     class="message-input" 

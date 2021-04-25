@@ -12,6 +12,7 @@ var app = new Vue(
                     avatar: '_1',
                     visible: true,
                     messages: [
+                        {},
                         {
                             date: '10/01/2020 15:30:55',
                             text: 'Hai portato a spasso il cane?',
@@ -37,6 +38,7 @@ var app = new Vue(
                     avatar: '_2',
                     visible: true,
                     messages: [
+                        {},
                         {
                             date: '20/03/2020 16:30:00',
                             text: 'Ciao come stai?',
@@ -62,6 +64,7 @@ var app = new Vue(
                     avatar: '_3',
                     visible: true,
                     messages: [
+                        {},
                         {
                             date: '28/03/2020 10:10:40',
                             text: 'La Marianna va in campagna',
@@ -87,6 +90,7 @@ var app = new Vue(
                     avatar: '_4',
                     visible: true,
                     messages: [
+                        {},
                         {
                             date: '10/01/2020 15:30:55',
                             text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -151,6 +155,8 @@ var app = new Vue(
                     this.contacts[index].messages.push(botMessage);
                 }, 1000 ); 
             },
+
+            // Funzione per far comparire il dropdown sul singolo messaggio
             showDropDown(index) {
                 let mesIndex = index;
                 this.contacts[this.contactIndex].messages.forEach((element, index) => {
@@ -160,6 +166,18 @@ var app = new Vue(
                         element.dropdown = false;
                     }
                 });  
+            },
+
+            // Funzione che toglie il dropdown dal messaggio
+            toggleDropDown() {
+                this.contacts[this.contactIndex].messages.forEach((element) => {
+                    element.dropdown = false;
+                })
+            },
+
+            // Funzione che elimina il messaggio
+            removeMessage(index) {
+                this.contacts[this.contactIndex].messages.splice(index, 1);
             }
         }
     }
