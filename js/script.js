@@ -177,7 +177,8 @@ var app = new Vue(
 
             // Funzione che elimina il messaggio
             removeMessage(index) {
-                this.contacts[this.contactIndex].messages.splice(index, 1);
+                this.contacts[this.contactIndex].messages.splice(index, 1); 
+           
             }
         }
     }

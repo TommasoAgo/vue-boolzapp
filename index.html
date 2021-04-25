@@ -118,8 +118,8 @@
                             <!-- Avatar Name -->
                             <div class="avatar-name">
                                 <span class="utente-text">{{contacts[contactIndex].name}}</span><br>
-                                <span v-if="contacts[contactIndex].messages.length != 0" class="ultimo-accesso grey-text">Ultimo accesso oggi al alle: {{contacts[contactIndex].messages[contacts[contactIndex].messages.length - 1].date}}</span>
-                                <span v-else class="ultimo-accesso grey-text">Online</span>
+                                <span v-if="contacts[contactIndex].messages.length != 0 && contacts[contactIndex].messages.length != 1 " class="ultimo-accesso grey-text">Ultimo accesso oggi al alle: {{contacts[contactIndex].messages[contacts[contactIndex].messages.length - 1].date}}</span>
+                                <span v-if="contacts[contactIndex].messages.length == 1" class="ultimo-accesso grey-text">Online</span>
                             </div>
                         </div>
                         
@@ -175,7 +175,9 @@
                     id="message-input"
                     placeholder="Scrivi un messaggio"
                     v-model="userMessage">
-                    <i class="fas fa-microphone pointer"></i>
+                    <i class="fas pointer" 
+                    :class="userMessage == '' ? 'fa-microphone' : 'fa-paper-plane'"
+                    @click="pushUserMessage(contactIndex)"></i>
                 </div>
             </div>
 
