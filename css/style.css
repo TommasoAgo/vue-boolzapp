@@ -227,20 +227,26 @@ header {
 .sent {
     background-color: #d5f9ba;
 
-    margin-left: 55%;
+    float: right;
+    clear: both;
+
+    margin-right: 20px;
 }
 
 .received {
     background-color: white;
 
-    margin-left: 5%;
+    float: left;
+    clear: both;
+
+    margin-left: 20px;
 }
 
 .sent,
 .received {
     border-radius: 10px;
 
-    width: 40%;
+    min-width: 20%;
     min-height: 40px;
 
     font-size: 14px;
@@ -376,5 +382,28 @@ header {
     font-size: 10px;
 
     border-radius: 50%;
+}
+
+/* Responsive */
+@media all and (max-width : 768px) {
+    .nome-utente-section {
+        min-width: 50px;
+    }
+
+    .lens {
+        display: none;
+    }
+
+    .avatar-header-icons {
+        display: none;
+    }
+
+    .notifications {
+        height: 58px;
+    }
+
+    .notifications a {
+        display: none;
+    }
 }
 
