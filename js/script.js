@@ -12,7 +12,6 @@ var app = new Vue(
                     avatar: '_1',
                     visible: true,
                     messages: [
-                        {},
                         {
                             date: '10/01/2020 15:30:55',
                             text: 'Hai portato a spasso il cane?',
@@ -38,7 +37,6 @@ var app = new Vue(
                     avatar: '_2',
                     visible: true,
                     messages: [
-                        {},
                         {
                             date: '20/03/2020 16:30:00',
                             text: 'Ciao come stai?',
@@ -64,7 +62,6 @@ var app = new Vue(
                     avatar: '_3',
                     visible: true,
                     messages: [
-                        {},
                         {
                             date: '28/03/2020 10:10:40',
                             text: 'La Marianna va in campagna',
@@ -90,7 +87,6 @@ var app = new Vue(
                     avatar: '_4',
                     visible: true,
                     messages: [
-                        {},
                         {
                             date: '10/01/2020 15:30:55',
                             text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -137,9 +133,10 @@ var app = new Vue(
                 if( this.userMessage.length != '') {
                     this.contacts[index].messages.push(userMessageItem);
                     this.userMessage = '';
+                    this.pushBotMessage(index);
                 }
 
-                this.pushBotMessage(index);
+                
             },
 
             // Funzione che fa apparire un messaggio di risposta all'utente dopo un secondo rispetto all'input

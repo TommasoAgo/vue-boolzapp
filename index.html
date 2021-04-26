@@ -89,12 +89,18 @@
                         </div>
                         <div class="avatar-name">
                             <span class="contact-name">{{contact.name}}</span>
-                            <div v-if="contacts[contactIndex].messages.length != 0" class="last-message">
+                            <div v-if="contacts[contactIndex].messages.length > 0" class="last-message">
                                 {{contact.messages[contact.messages.length - 1 ].text}}
                             </div>
+                            <div v-else class="last-message">
+                                No message
+                            </div>
                         </div>
-                        <div v-if="contacts[contactIndex].messages.length != 0" class="last-access">
+                        <div v-if="contacts[contactIndex].messages.length > 0" class="last-access">
                             {{contact.messages[contact.messages.length - 1 ].date}}
+                        </div>
+                        <div v-else class="last-access">
+                            Online
                         </div>
                     </div>
                 </div>
@@ -118,8 +124,8 @@
                             <!-- Avatar Name -->
                             <div class="avatar-name">
                                 <span class="utente-text">{{contacts[contactIndex].name}}</span><br>
-                                <span v-if="contacts[contactIndex].messages.length != 0 && contacts[contactIndex].messages.length != 1 " class="ultimo-accesso grey-text">Ultimo accesso oggi al alle: {{contacts[contactIndex].messages[contacts[contactIndex].messages.length - 1].date}}</span>
-                                <span v-if="contacts[contactIndex].messages.length == 1" class="ultimo-accesso grey-text">Online</span>
+                                <span v-if="contacts[contactIndex].messages.length > 0 " class="ultimo-accesso grey-text">Ultimo accesso oggi al alle: {{contacts[contactIndex].messages[contacts[contactIndex].messages.length - 1].date}}</span>
+                                <span v-else class="ultimo-accesso grey-text">Online</span>
                             </div>
                         </div>
                         
