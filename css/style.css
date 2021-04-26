@@ -385,7 +385,7 @@ header {
 }
 
 /* Responsive */
-@media all and (max-width : 768px) {
+@media all and (max-width : 800px) {
     .nome-utente-section {
         min-width: 50px;
     }
@@ -404,6 +404,10 @@ header {
 
     .notifications a {
         display: none;
+    }
+
+    .date {
+        font-size: 6px;
     }
 }
 
