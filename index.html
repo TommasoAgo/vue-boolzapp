@@ -89,14 +89,14 @@
                         </div>
                         <div class="avatar-name">
                             <span class="contact-name">{{contact.name}}</span>
-                            <div v-if="contacts[contactIndex].messages.length > 0" class="last-message">
+                            <div v-if="contacts[index].messages.length > 0" class="last-message">
                                 {{contact.messages[contact.messages.length - 1 ].text}}
                             </div>
                             <div v-else class="last-message">
                                 No message
                             </div>
                         </div>
-                        <div v-if="contacts[contactIndex].messages.length > 0" class="last-access">
+                        <div v-if="contacts[index].messages.length > 0" class="last-access">
                             {{contact.messages[contact.messages.length - 1 ].date}}
                         </div>
                         <div v-else class="last-access">
